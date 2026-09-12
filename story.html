@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta
+    name="description"
+    content="The story of Red Shoes Review, UIC's student literary and arts magazine."
+  />
+
+  <title>Our Story | Red Shoes Review</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --cream: #f2e4cc;
+      --cream-light: #f8eedc;
+      --cream-deep: #dfc8a7;
+
+      --red: #a31528;
+      --red-bright: #bf2037;
+      --red-dark: #6f0e1d;
+
+      --pink: #d6848f;
+      --rose: #b84d60;
+
+      --brown: #3b2722;
+      --brown-soft: #6e5148;
+
+      --line: rgba(59,39,34,.28);
+      --shadow: rgba(77,20,27,.18);
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      color: var(--brown);
+      background: var(--cream-light);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+
+    /* PAPER TEXTURE */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      opacity: .12;
+
+      background-image:
+        radial-gradient(rgba(74,46,35,.35) .45px, transparent .45px),
+        radial-gradient(rgba(120,40,45,.16) .55px, transparent .55px);
+
+      background-size: 4px 4px, 7px 7px;
+      background-position: 0 0, 2px 1px;
+      mix-blend-mode: multiply;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      min-height: 88px;
+      padding: 14px 5vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+
+      background: rgba(248,238,220,.96);
+      border-bottom: 1px solid rgba(163,21,40,.3);
+
+      backdrop-filter: blur(10px);
+    }
+
+
+    .logo {
+      text-decoration: none;
+
+      display: flex;
+      align-items: baseline;
+      gap: .6rem;
+
+      color: var(--red);
+    }
+
+
+    .logo-script {
+      font-family: "Italianno", cursive;
+      font-size: 3.25rem;
+      line-height: .7;
+      transform: rotate(-2deg);
+    }
+
+
+    .logo-small {
+      font-family: "Cormorant Garamond", serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+    }
+
+
+    .nav {
+      display: flex;
+      gap: 1.35rem;
+      align-items: center;
+    }
+
+
+    .nav a {
+      text-decoration: none;
+      font-size: .86rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+
+    .nav a:hover {
+      color: var(--red);
+    }
+
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--red);
+      font-size: 1.6rem;
+    }
+
+
+    /* HERO */
+
+    .story-hero {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 610px;
+      padding: 7rem 7vw 8rem;
+
+      display: grid;
+      grid-template-columns: 1fr .75fr;
+      align-items: center;
+      gap: 5rem;
+
+      background:
+        radial-gradient(
+          circle at 78% 27%,
+          rgba(214,132,143,.36),
+          transparent 20%
+        ),
+        radial-gradient(
+          circle at 89% 78%,
+          rgba(191,32,55,.12),
+          transparent 24%
+        ),
+        var(--cream);
+
+      border-bottom: 12px solid var(--red-dark);
+    }
+
+
+    .story-hero::before {
+      content: "";
+      position: absolute;
+
+      width: 460px;
+      height: 460px;
+
+      right: -170px;
+      top: -180px;
+
+      border: 34px double rgba(163,21,40,.16);
+      border-radius: 50%;
+    }
+
+
+    .eyebrow {
+      margin: 0 0 .8rem;
+
+      color: var(--red);
+
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+
+    .story-hero h1 {
+      margin: 0;
+
+      max-width: 700px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(5rem, 10vw, 9rem);
+      font-weight: 600;
+
+      line-height: .78;
+      letter-spacing: -.055em;
+
+      color: var(--brown);
+    }
+
+
+    .story-hero h1 em {
+      color: var(--red);
+      font-weight: 500;
+    }
+
+
+    .hero-intro {
+      max-width: 620px;
+      margin: 2rem 0 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+
+      line-height: 1.2;
+    }
+
+
+    /* HERO DECORATION */
+
+    .story-card {
+      position: relative;
+
+      min-height: 370px;
+      padding: 2.5rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background: var(--red);
+
+      color: var(--cream-light);
+
+      border: 7px double var(--cream);
+
+      box-shadow: 0 22px 50px var(--shadow);
+
+      transform: rotate(3deg);
+    }
+
+
+    .story-card::before {
+      content: "✦";
+
+      position: absolute;
+      right: 1.7rem;
+      top: 1.2rem;
+
+      color: var(--pink);
+
+      font-size: 3.4rem;
+    }
+
+
+    .story-card-small {
+      font-size: .63rem;
+      font-weight: 700;
+
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+
+    .story-card-year {
+      margin: auto 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 7rem;
+      font-style: italic;
+
+      line-height: .8;
+    }
+
+
+    .story-card-note {
+      font-family: "Italianno", cursive;
+      font-size: 2rem;
+
+      color: var(--cream);
+    }
+
+
+    /* INTRO */
+
+    .intro-section {
+      padding: 7rem 7vw;
+
+      background: var(--cream-light);
+    }
+
+
+    .section-label {
+      margin-bottom: 2rem;
+
+      color: var(--red);
+
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+
+
+    .intro-grid h2 {
+      margin: 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 6vw, 6.5rem);
+
+      line-height: .86;
+      font-weight: 600;
+      letter-spacing: -.04em;
+
+      color: var(--brown);
+    }
+
+
+    .intro-grid h2 em {
+      color: var(--red);
+    }
+
+
+    .intro-copy {
+      max-width: 620px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+
+      line-height: 1.45;
+    }
+
+
+    .intro-copy p:first-child {
+      margin-top: 0;
+    }
+
+
+    /* TIMELINE */
+
+    .timeline-section {
+      padding: 7rem 7vw 8rem;
+
+      background: var(--cream);
+    }
+
+
+    .timeline-heading {
+      display: grid;
+      grid-template-columns: 1fr .55fr;
+      gap: 5rem;
+
+      align-items: end;
+
+      margin-bottom: 4rem;
+    }
+
+
+    .timeline-heading h2 {
+      margin: 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.6rem, 7vw, 7rem);
+
+      font-weight: 600;
+      line-height: .83;
+      letter-spacing: -.04em;
+    }
+
+
+    .timeline-heading h2 em {
+      color: var(--red);
+    }
+
+
+    .timeline-heading p {
+      margin: 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.25rem;
+
+      line-height: 1.35;
+    }
+
+
+    .timeline {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+
+    .timeline-item {
+      position: relative;
+
+      margin-left: 1.2rem;
+      padding: 0 0 5rem 4rem;
+
+      border-left: 2px solid rgba(163,21,40,.45);
+    }
+
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+
+    .timeline-item::before {
+      content: "✦";
+
+      position: absolute;
+      left: -16px;
+      top: -8px;
+
+      padding: 0 4px;
+
+      background: var(--cream);
+      color: var(--red);
+
+      font-size: 1.5rem;
+    }
+
+
+    .year {
+      margin: 0 0 .5rem;
+
+      color: var(--red);
+
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+
+    .timeline-item h3 {
+      margin: 0 0 .8rem;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+
+      font-weight: 600;
+      line-height: .9;
+
+      color: var(--brown);
+    }
+
+
+    .timeline-item p:not(.year) {
+      max-width: 700px;
+      margin: 0;
+
+      font-size: 1rem;
+      line-height: 1.7;
+
+      color: var(--brown-soft);
+    }
+
+
+    /* BELIEF */
+
+    .belief {
+      position: relative;
+      overflow: hidden;
+
+      padding: 8rem 8vw;
+
+      text-align: center;
+
+      background: var(--red-dark);
+      color: var(--cream-light);
+    }
+
+
+    .belief::after {
+      content: "";
+
+      position: absolute;
+
+      width: 380px;
+      height: 380px;
+
+      right: -170px;
+      bottom: -190px;
+
+      border: 26px double rgba(242,228,204,.11);
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+
+    .belief .eyebrow {
+      color: var(--pink);
+    }
+
+
+    .belief blockquote {
+      max-width: 900px;
+      margin: 1rem auto 0;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+
+      font-weight: 600;
+      font-style: italic;
+
+      line-height: .9;
+      letter-spacing: -.03em;
+    }
+
+
+    .belief span {
+      display: block;
+
+      margin-top: 2.2rem;
+
+      color: var(--cream);
+
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* RETURN */
+
+    .return-section {
+      padding: 6rem 7vw;
+
+      text-align: center;
+
+      background: var(--cream-light);
+    }
+
+
+    .return-section p {
+      margin: 0 0 1.6rem;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+    }
+
+
+    .button {
+      display: inline-block;
+
+      padding: .88rem 1.25rem;
+
+      border: 1px solid var(--red);
+      border-radius: 999px;
+
+      background: var(--red);
+      color: var(--cream-light);
+
+      text-decoration: none;
+
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+
+      transition: .2s ease;
+    }
+
+
+    .button:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 5rem 7vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 4rem;
+
+      background: var(--red);
+      color: var(--cream-light);
+    }
+
+
+    .contact-section .eyebrow {
+      color: var(--cream);
+    }
+
+
+    .contact-section h2 {
+      margin: 0;
+
+      font-family: "Italianno", cursive;
+      font-size: 5.3rem;
+
+      font-weight: 400;
+      line-height: .8;
+    }
+
+
+    .contact-section p {
+      margin: .5rem 0 0;
+    }
+
+
+    .contact-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+
+    .contact-links a {
+      color: var(--cream-light);
+
+      text-decoration: none;
+
+      border-bottom: 1px solid rgba(248,238,220,.55);
+
+      font-size: .85rem;
+    }
+
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 1rem;
+
+      padding: 1.2rem 7vw;
+
+      background: var(--red-dark);
+      color: #edd9c5;
+
+      font-size: .62rem;
+      letter-spacing: .15em;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 950px) {
+
+      .menu-toggle {
+        display: block;
+      }
+
+
+      .nav {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        padding: 1.2rem 5vw 1.6rem;
+
+        background: var(--cream-light);
+
+        border-bottom: 1px solid rgba(163,21,40,.22);
+
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+
+      .nav.open {
+        display: flex;
+      }
+
+
+      .story-hero {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+
+        padding-top: 5rem;
+      }
+
+
+      .story-card {
+        max-width: 520px;
+        width: 100%;
+
+        transform: none;
+      }
+
+
+      .intro-grid,
+      .timeline-heading {
+        grid-template-columns: 1fr;
+
+        gap: 2rem;
+      }
+
+    }
+
+
+    @media (max-width: 620px) {
+
+      .site-header {
+        min-height: 74px;
+      }
+
+
+      .logo-script {
+        font-size: 2.65rem;
+      }
+
+
+      .logo-small {
+        display: none;
+      }
+
+
+      .story-hero {
+        min-height: auto;
+
+        padding: 4.5rem 6vw 6rem;
+      }
+
+
+      .story-hero h1 {
+        font-size: clamp(4.5rem, 21vw, 7rem);
+      }
+
+
+      .story-card {
+        min-height: 300px;
+      }
+
+
+      .story-card-year {
+        font-size: 5rem;
+      }
+
+
+      .intro-section,
+      .timeline-section {
+        padding: 5rem 6vw;
+      }
+
+
+      .timeline-item {
+        margin-left: .5rem;
+        padding-left: 2rem;
+      }
+
+
+      .belief {
+        padding: 6rem 6vw;
+      }
+
+
+      .contact-section,
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+
+      .contact-section h2 {
+        font-size: 4.2rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a class="logo" href="index.html" aria-label="Red Shoes Review home">
+      <span class="logo-script">Red Shoes</span>
+      <span class="logo-small">REVIEW</span>
+    </a>
+
+
+    <button
+      class="menu-toggle"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+
+    <nav class="nav" aria-label="Main navigation">
+
+      <a href="index.html#about">About</a>
+
+      <a href="index.html#issues">Past Issues</a>
+
+      <a href="index.html#submissions">Submissions</a>
+
+      <a href="index.html#events">Events</a>
+
+      <a href="index.html#media">Media</a>
+
+      <a href="index.html#contact">Contact</a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="story-hero">
+
+      <div>
+
+        <p class="eyebrow">
+          EST. 1970 · UNIVERSITY OF ILLINOIS CHICAGO
+        </p>
+
+        <h1>
+          Our <em>Story.</em>
+        </h1>
+
+        <p class="hero-intro">
+          More than five decades of creativity, community,
+          and student expression at UIC.
+        </p>
+
+      </div>
+
+
+      <div class="story-card" aria-hidden="true">
+
+        <span class="story-card-small">
+          RED SHOES REVIEW · UIC
+        </span>
+
+        <div class="story-card-year">
+          1970
+        </div>
+
+        <span class="story-card-note">
+          where the story began
+        </span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- INTRO -->
+
+    <section class="intro-section">
+
+      <div class="section-label">
+        01 / THEN & NOW
+      </div>
+
+
+      <div class="intro-grid">
+
+        <div>
+
+          <p class="eyebrow">
+            OUR BEGINNING
+          </p>
+
+          <h2>
+            A magazine built by
+            <em>students.</em>
+          </h2>
+
+        </div>
+
+
+        <div class="intro-copy">
+
+          <p>
+            <strong>Red Shoes Review</strong> was established in
+            1970 and has been part of UIC's creative community
+            for more than five decades.
+          </p>
+
+          <p>
+            Throughout its history, the magazine has evolved
+            while continuing to provide students with a space
+            to create, collaborate, and share their work.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TIMELINE -->
+
+    <section class="timeline-section">
+
+
+      <div class="section-label">
+        02 / THROUGH THE YEARS
+      </div>
+
+
+      <div class="timeline-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            THE RSR ARCHIVE
+          </p>
+
+          <h2>
+            From 1970<br>
+            <em>to now.</em>
+          </h2>
+
+        </div>
+
+
+        <p>
+          The magazine has changed over the years,
+          but its commitment to student creativity remains.
+        </p>
+
+      </div>
+
+
+
+      <div class="timeline">
+
+
+        <article class="timeline-item">
+
+          <p class="year">
+            1970
+          </p>
+
+          <h3>
+            Red Shoes Review Begins
+          </h3>
+
+          <p>
+            Red Shoes Review was established in 1970, beginning
+            a student-led tradition of celebrating creative
+            expression at the University of Illinois Chicago.
+          </p>
+
+        </article>
+
+
+
+        <article class="timeline-item">
+
+          <p class="year">
+            OUR EARLY YEARS
+          </p>
+
+          <h3>
+            The Honors College
+          </h3>
+
+          <p>
+            RSR was originally associated with UIC's Honors College,
+            where the magazine developed as a space for students
+            to share their writing, art, and creative perspectives.
+          </p>
+
+        </article>
+
+
+
+        <article class="timeline-item">
+
+          <p class="year">
+            A NEW CHAPTER
+          </p>
+
+          <h3>
+            Becoming Independent
+          </h3>
+
+          <p>
+            Red Shoes Review later became an independent student
+            organization, opening a new chapter in the magazine's
+            history and expanding the community surrounding it.
+          </p>
+
+        </article>
+
+
+
+        <article class="timeline-item">
+
+          <p class="year">
+            RSR TODAY
+          </p>
+
+          <h3>
+            Creativity Without Boundaries
+          </h3>
+
+          <p>
+            Today, Red Shoes Review is built around the idea that
+            creativity is not limited to one college, major, or
+            discipline. Students across UIC can take part in the
+            magazine and contribute to the creative community that
+            continues to shape RSR.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- BELIEF -->
+
+    <section class="belief">
+
+      <p class="eyebrow">
+        WHAT WE BELIEVE
+      </p>
+
+      <blockquote>
+        “Creativity belongs to everyone.”
+      </blockquote>
+
+      <span>
+        THE SPIRIT OF RED SHOES REVIEW
+      </span>
+
+    </section>
+
+
+
+    <!-- RETURN -->
+
+    <section class="return-section">
+
+      <p>
+        Ready to keep exploring?
+      </p>
+
+      <a class="button" href="index.html">
+        ← Return to Red Shoes Review
+      </a>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section class="contact-section">
+
+      <div>
+
+        <p class="eyebrow">
+          KEEP IN TOUCH
+        </p>
+
+        <h2>
+          Red Shoes Review
+        </h2>
+
+        <p>
+          University of Illinois Chicago
+        </p>
+
+      </div>
+
+
+      <div class="contact-links">
+
+        <a href="mailto:UIC.redshoes@gmail.com">
+          Email
+        </a>
+
+        <a
+          href="https://www.instagram.com/redshoesreview/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a href="index.html#submissions">
+          Submissions
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <footer>
+
+    <span>
+      © 2026 RED SHOES REVIEW
+    </span>
+
+    <span>
+      STUDENT-RUN • UIC • CHICAGO
+    </span>
+
+  </footer>
+
+
+
+  <script>
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+
+    if (toggle && nav) {
+
+      toggle.addEventListener('click', () => {
+
+        const open = nav.classList.toggle('open');
+
+        toggle.setAttribute(
+          'aria-expanded',
+          String(open)
+        );
+
+      });
+
+
+      nav.querySelectorAll('a').forEach(link =>
+
+        link.addEventListener('click', () => {
+
+          nav.classList.remove('open');
+
+          toggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+        })
+
+      );
+
+    }
+
+  </script>
+
+
+</body>
+</html>
