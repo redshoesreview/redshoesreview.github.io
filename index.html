@@ -128,13 +128,34 @@ a { color: inherit; }
 .card-b span { font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; }
 .shoe-mark { font-size: 2.4rem; color: var(--pink); }
 .tape { position: absolute; width: 104px; height: 31px; background: rgba(218,183,151,.72); box-shadow: inset 0 0 0 1px rgba(100,61,42,.08); }
-.tape-one { left: 22%; top: 2%; transform: rotate(-12deg); }
+.tape-one { left: 17%; top: 9%; transform: rotate(-12deg); }
+    .tape-two {
+  right: 18%;
+  bottom: 68%;
+  transform: rotate(8deg);
+  z-index: 5;
+}
 .flower { position: absolute; color: var(--rose); font-size: 5rem; text-shadow: 4px 4px 0 rgba(248,238,220,.7); }
 .flower-one { right: 4%; top: 0; transform: rotate(14deg); }
 .flower-two { left: -2%; bottom: -2%; font-size: 3.7rem; transform: rotate(-19deg); }
 .stamp { position: absolute; right: 12%; top: 29%; width: 118px; height: 118px; border: 3px solid var(--red); border-radius: 50%; display:grid; place-items:center; text-align:center; color: var(--red); font-family: "Cormorant Garamond", serif; font-weight:700; line-height: .9; transform: rotate(-12deg); background: rgba(248,238,220,.6); }
 .scallop { position:absolute; left:0; right:0; bottom:-1px; height:26px; background: radial-gradient(circle at 13px -2px, transparent 13px, var(--red-dark) 14px) 0 0/26px 26px repeat-x; opacity:.18; }
+.logo-card {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 2%;
+  top: 8%;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 22px 25px rgba(77,20,27,.18));
+}
 
+.logo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 .section { padding: 6.5rem 7vw; }
 .section-label { color: var(--red); font-size: .68rem; font-weight:700; letter-spacing:.18em; margin-bottom: 2rem; }
 .intro-section { background: var(--cream-light); }
@@ -175,8 +196,7 @@ a { color: inherit; }
 .issue-cream { background:var(--cream-light); color:var(--red-dark); transform:rotate(-.6deg); }
 
 .submit-section { position:relative; overflow:hidden; padding:8rem 7vw; text-align:center; background:var(--red-dark); color:var(--cream-light); }
-.submit-section::after { content:""; position:absolute; width:430px; height:430px; border:28px double rgba(242,228,204,.12); border-radius:50%; left:-180px; bottom:-220px; }
-.submit-section h2 { margin:.3rem auto 1rem; font-family:"Cormorant Garamond",serif; font-size:clamp(4rem,8vw,8.2rem); font-weight:600; line-height:.78; letter-spacing:-.04em; }
+.submit-section::after { content:""; position:absolute; width:430px; height:430px; border:28px double rgba(242,228,204,.12); border-radius:50%; left:-180px; bottom:-220px; pointer-events:none; }.submit-section h2 { margin:.3rem auto 1rem; font-family:"Cormorant Garamond",serif; font-size:clamp(4rem,8vw,8.2rem); font-weight:600; line-height:.78; letter-spacing:-.04em; }
 .submit-section h2 em { color:var(--pink); }
 .submit-copy { max-width:660px; margin:1.8rem auto 0; color:#f6e2cf; }
 .submit-buttons { justify-content:center; }
@@ -193,15 +213,99 @@ a { color: inherit; }
 .event-ticket p { font-size:.72rem; font-weight:700; letter-spacing:.14em; }
 .event-ticket span { font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.4rem; }
 
-.media-section { background:#ecd8bf; border-top:1px solid var(--line); }
-.media-heading { display:grid; grid-template-columns:1fr .45fr; gap:5rem; align-items:end; margin-bottom:3rem; }
-.media-heading > p { margin:0; font-family:"Cormorant Garamond",serif; font-size:1.2rem; }
-.media-grid { display:grid; grid-template-columns:1.2fr .8fr .9fr 1.1fr; gap:1rem; align-items:end; }
-.media-tile { display:grid; place-items:center; min-height:270px; border:8px solid var(--cream-light); box-shadow:0 10px 30px rgba(81,40,31,.12); color:var(--cream-light); font-family:"Cormorant Garamond",serif; font-size:2.1rem; letter-spacing:.08em; }
-.media-tile.one { background:var(--red); transform:rotate(-2deg); }
-.media-tile.two { background:var(--rose); min-height:330px; transform:rotate(1deg); }
-.media-tile.three { background:#9d5a5b; min-height:240px; transform:rotate(-1deg); }
-.media-tile.four { background:var(--red-dark); min-height:300px; transform:rotate(1.4deg); }
+.contact-directory {
+  background: #ecd8bf;
+  border-top: 1px solid var(--line);
+}
+
+.contact-directory-head {
+  max-width: 760px;
+  margin-bottom: 3.5rem;
+}
+
+.contact-directory-head h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.4rem, 6vw, 6.5rem);
+  line-height: .88;
+  font-weight: 600;
+  letter-spacing: -.04em;
+  color: var(--brown);
+}
+
+.contact-directory-head h2 em {
+  color: var(--red);
+}
+
+.contact-directory-head > p:last-child {
+  max-width: 620px;
+  margin-top: 1.5rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+}
+
+.contact-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.contact-card {
+  min-height: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(90,46,37,.18);
+  box-shadow: 10px 12px 0 rgba(91,38,35,.08);
+}
+
+.contact-card-red {
+  background: var(--red);
+  color: var(--cream-light);
+  transform: rotate(-1deg);
+}
+
+.contact-card-pink {
+  background: var(--pink);
+  color: var(--red-dark);
+  transform: translateY(-10px) rotate(1deg);
+}
+
+.contact-card-cream {
+  background: var(--cream-light);
+  color: var(--red-dark);
+  transform: rotate(-.7deg);
+}
+
+.contact-role {
+  margin: 0 0 2rem;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.contact-card h3 {
+  margin: 0 0 .8rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  line-height: .95;
+}
+
+.contact-description {
+  margin: 0 0 2rem;
+  font-size: .9rem;
+}
+
+.contact-card a {
+  margin-top: auto;
+  color: inherit;
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  align-self: flex-start;
+}
 
 .contact-section { padding:5rem 7vw; display:flex; justify-content:space-between; gap:4rem; align-items:end; background:var(--red); color:var(--cream-light); }
 .contact-section h2 { margin:0; font-family:"Italianno",cursive; font-size:5.3rem; font-weight:400; line-height:.8; }
@@ -217,6 +321,16 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
   .hero { grid-template-columns:1fr; padding-top:5rem; gap:3rem; }
   .hero-art { min-height:430px; max-width:600px; width:100%; }
   .feature-grid, .issue-shelf { grid-template-columns:1fr; }
+  .contact-card-grid {
+  grid-template-columns: 1fr;
+}
+
+.contact-card,
+.contact-card-red,
+.contact-card-pink,
+.contact-card-cream {
+  transform: none;
+}
   .feature-card, .tilt-left, .tilt-right { transform:none; }
   .issue-card { min-height:350px; transform:none; }
   .issue-pink { transform:none; }
@@ -228,11 +342,32 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
 @media (max-width: 620px) {
   .site-header { min-height:74px; }
   .logo-script { font-size:2.65rem; }
-  .logo-small { display:none; }
+  .logo-small {
+  display: inline;
+  font-size: .68rem;
+  letter-spacing: .22em;
+}
   .hero { min-height:auto; padding:4.5rem 6vw 6rem; }
   .hero h1 { font-size:clamp(4.4rem,21vw,7rem); }
   .hero-intro { font-size:1.25rem; }
   .hero-art { min-height:380px; }
+  .logo-card {
+  width: 190px;
+  height: 190px;
+}
+  .tape-one {
+  left: 15%;
+  top: 9%;
+  width: 90px;
+  height: 27px;
+}
+
+.tape-two {
+  right: 14%;
+  bottom: 63%;
+  width: 90px;
+  height: 27px;
+}
   .card-a { width:220px; height:300px; }
   .big-r { font-size:10rem; }
   .card-b { width:205px; height:245px; padding:1.4rem; }
@@ -244,7 +379,21 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
   .contact-section, footer { flex-direction:column; align-items:flex-start; }
   .contact-section h2 { font-size:4.2rem; }
 }
+.submit-buttons {
+  position: relative;
+  z-index: 10;
+}
 
+.submit-buttons a {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+.submit-stamp {
+  pointer-events: none;
+}
   </style>
 </head>
 <body>
@@ -259,7 +408,6 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
       <a href="#issues">Past Issues</a>
       <a href="#submissions">Submissions</a>
       <a href="#events">Events</a>
-      <a href="#media">Media</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -275,16 +423,14 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
           <a class="button outline" href="#submissions">Submit your work</a>
         </div>
       </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <div class="paper-card card-a">
-          <span class="tiny-type">EST. AT UIC</span>
-          <div class="big-r">R</div>
-          <span class="scribble">stories live here</span>
-        </div>
+<div class="hero-art" aria-hidden="true">
+      <div class="logo-card">
+  <img src="rsr-logo.png" alt="Red Shoes Review logo">
+</div>
+  <div class="tape tape-two"></div>
         <div class="paper-card card-b">
           <div class="shoe-mark">♥</div>
-          <p>RED<br>SHOES<br>REVIEW</p>
+          <p>STORIES<br>WORTH<br>KEEPING</p>
           <span>student-made / chicago</span>
         </div>
         <div class="tape tape-one"></div>
@@ -305,67 +451,105 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
         <div class="intro-text">
           <p><strong>Red Shoes Review</strong> is a student-run literary and arts magazine at the University of Illinois Chicago. We publish and celebrate creative work from students across disciplines.</p>
           <p>Think poetry tucked into margins, photographs that feel like memories, essays that refuse to behave, and art that deserves to be held onto.</p>
-          <a class="text-link" href="#contact">Meet the team →</a>
+          <a class="text-link" href="team.html">Meet the team →</a>
         </div>
       </div>
     </section>
 
-    <section class="feature-band">
-      <div class="feature-heading">
-        <p class="eyebrow light">WHAT'S HAPPENING</p>
-        <h2>Inside Red Shoes Review</h2>
+   <section class="feature-band">
+  <div class="feature-heading">
+    <p class="eyebrow light">INSIDE THE MAGAZINE</p>
+    <h2>Inside Red Shoes Review</h2>
+  </div>
+
+  <div class="feature-grid">
+
+    <!-- OUR STORY -->
+    <article class="feature-card tilt-left">
+      <div class="image-placeholder issue-image">
+        <span>OUR<br>STORY</span>
       </div>
-      <div class="feature-grid">
-        <article class="feature-card tilt-left">
-          <div class="image-placeholder issue-image"><span>ISSUE<br>COVER</span></div>
-          <p class="card-kicker">LATEST PUBLICATION</p>
-          <h3>Our newest issue</h3>
-          <p>Feature the current issue, an editor's note, and selected contributors here.</p>
-          <a href="#issues">Open issue →</a>
-        </article>
-        <article class="feature-card">
-          <div class="image-placeholder event-image"><span>EVENT<br>PHOTO</span></div>
-          <p class="card-kicker">COMMUNITY</p>
-          <h3>Events + launches</h3>
-          <p>Readings, release events, workshops, collaborations, and campus happenings.</p>
-          <a href="#events">See events →</a>
-        </article>
-        <article class="feature-card tilt-right">
-          <div class="image-placeholder archive-image"><span>PAST<br>ISSUES</span></div>
-          <p class="card-kicker">THE ARCHIVE</p>
-          <h3>Past issues</h3>
-          <p>Keep every edition of RSR in one place so the archive grows with the magazine.</p>
-          <a href="#issues">Browse archive →</a>
-        </article>
+
+      <p class="card-kicker">THEN & NOW</p>
+      <h3>Our Story</h3>
+
+      <p>
+        Discover the story behind Red Shoes Review and the creative
+        community that has shaped the magazine over the years.
+      </p>
+
+<a href="story.html">Read our story →</a>
+    </article>
+
+
+    <!-- CURRENT THEME -->
+    <article class="feature-card">
+      <div class="image-placeholder event-image">
+        <span>FALL 2026<br>THEME</span>
       </div>
-    </section>
+
+      <p class="card-kicker">THIS ISSUE</p>
+      <h3>Theme Coming Soon</h3>
+
+      <p>
+        Each issue of Red Shoes Review is shaped by a new theme.
+        Stay tuned as we reveal the inspiration behind our Fall 2026 issue.
+      </p>
+
+      <span class="card-link">Coming soon ✦</span>
+    </article>
+
+
+    <!-- FOLLOW RSR -->
+    <article class="feature-card tilt-right">
+      <div class="image-placeholder archive-image">
+        <span>FOLLOW<br>RSR</span>
+      </div>
+
+      <p class="card-kicker">STAY CONNECTED</p>
+      <h3>Follow Red Shoes Review</h3>
+
+      <p>
+        Keep up with submission announcements, upcoming events,
+        behind-the-scenes moments, and everything RSR.
+      </p>
+
+      <a href="https://www.instagram.com/redshoesreview/" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        Follow @redshoesreview →
+      </a>
+    </article>
+
+  </div>
+</section>
 
     <section id="issues" class="section issues-section">
       <div class="issues-head">
         <div>
           <p class="eyebrow">THE ARCHIVE</p>
           <h2>Past <em>Issues</em></h2>
-        </div>
-        <p class="side-note">Every issue gets its own cover, semester, volume number, short note, and link to read.</p>
-      </div>
+     </div>
+<p class="side-note">A look back at the stories, art, and voices that have filled our pages.</p>
+</div>
       <div class="issue-shelf">
         <article class="issue-card issue-red">
           <div class="issue-number">VOL. 01</div>
           <h3>Red Shoes<br>Review</h3>
-          <p>Fall 2026</p>
-          <a href="#">READ ISSUE</a>
+          <p>2026-2027</p>
+          <a href="#">COMING SOON</a>
         </article>
         <article class="issue-card issue-pink">
           <div class="issue-number">ARCHIVE</div>
           <h3>Previous<br>Edition</h3>
-          <p>Spring 2026</p>
-          <a href="#">READ ISSUE</a>
+          <p>2023-2025</p>
+          <a href="https://drive.google.com/file/d/1RnY9M354NFLuRtdFktSdixwep2SjSFGG/view?usp=sharing" target="_blank">READ ISSUE</a>
         </article>
         <article class="issue-card issue-cream">
           <div class="issue-number">ARCHIVE</div>
           <h3>Previous<br>Edition</h3>
-          <p>Fall 2025</p>
-          <a href="#">READ ISSUE</a>
+          <p>2016-2017</p>
+          <a href="https://drive.google.com/file/d/15fNDmJ6k6KvE8cC0KLzb0HQ23YBHxBeD/view?usp=sharing" target="_blank">READ ISSUE</a>
         </article>
       </div>
     </section>
@@ -374,10 +558,10 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
       <div class="submit-stamp">OPEN<br>CALL</div>
       <p class="eyebrow light">SUBMISSIONS</p>
       <h2>Send us something<br><em>worth keeping.</em></h2>
-      <p class="submit-copy">Poetry, fiction, creative nonfiction, essays, visual art, photography, mixed media, and experimental work are welcome. Replace this paragraph with your official guidelines and deadline.</p>
+      <p class="submit-copy">Poetry, fiction, creative nonfiction, essays, visual art, photography, mixed media, and experimental work are welcome. </p>
       <div class="submit-buttons">
-        <a class="button cream" href="#">Submission form</a>
-        <a class="button ghost" href="#">Read guidelines</a>
+        <a class="button cream" href="https://forms.gle/UVYysP1VeEr8FK5Q9" target="_blank">Submission form</a> 
+        <a class="button ghost" href="https://docs.google.com/document/d/1TdY7Ooo_0HqhawLpr9X0P1zv04_hITHsDZ4DJjEVTZA/edit?usp=sharing" target="_blank">Read guidelines</a>
       </div>
     </section>
 
@@ -387,47 +571,66 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
         <div>
           <p class="eyebrow">COME FIND US</p>
           <h2>Events, readings<br>& launch nights.</h2>
-          <p class="body-copy">Use this area for upcoming events, magazine launches, writing workshops, tabling, collaborations, and involvement fair information.</p>
+          <p class="body-copy">Join us throughout the year as we bring the RSR community together through creative events, collaborations, and opportunities to get involved.</p>
         </div>
         <div class="event-ticket">
           <div class="ticket-top">NEXT UP</div>
-          <h3>Fall 2026<br>Launch Event</h3>
+          <h3>Fall 2026<br>GBM #1</h3>
           <p>DATE / TIME / LOCATION</p>
           <span>Details coming soon.</span>
         </div>
       </div>
     </section>
 
-    <section id="media" class="section media-section">
-      <div class="section-label">03 / MEDIA</div>
-      <div class="media-heading">
-        <div>
-          <p class="eyebrow">ON THE PAGE + OFF</p>
-          <h2>Media & <em>moments</em></h2>
-        </div>
-        <p>Drop event photos, contributor art, behind-the-scenes shots, and Instagram features into this gallery later.</p>
-      </div>
-      <div class="media-grid">
-        <div class="media-tile one">PHOTO</div>
-        <div class="media-tile two">ART</div>
-        <div class="media-tile three">EVENT</div>
-        <div class="media-tile four">RSR</div>
-      </div>
-    </section>
+    <section id="contact" class="section contact-directory">
 
-    <section id="contact" class="contact-section">
-      <div>
-        <p class="eyebrow light">KEEP IN TOUCH</p>
-        <h2>Red Shoes Review</h2>
-        <p>University of Illinois Chicago</p>
-      </div>
-      <div class="contact-links">
-        <a href="mailto:redshoesreview@example.com">Email</a>
-        <a href="#">Instagram</a>
-        <a href="#submissions">Submissions</a>
-      </div>
-    </section>
-  </main>
+  <div class="section-label">03 / CONTACT</div>
+
+  <div class="contact-directory-head">
+    <p class="eyebrow">GET IN TOUCH</p>
+    <h2>Reach out to <em>Red Shoes Review.</em></h2>
+    <p>
+      Questions about Red Shoes Review, submissions, collaborations,
+      or getting involved? We'd love to hear from you.
+    </p>
+  </div>
+
+  <div class="contact-card-grid">
+
+    <article class="contact-card contact-card-red">
+      <p class="contact-role">GENERAL INQUIRIES</p>
+      <h3>Red Shoes Review</h3>
+      <p class="contact-description">For general questions about the magazine.</p>
+      <a href="mailto:UIC.redshoes@gmail.com">
+        UIC.redshoes@gmail.com →
+      </a>
+    </article>
+
+    <article class="contact-card contact-card-pink">
+      <p class="contact-role">PRESIDENT / EDITOR-IN-CHIEF</p>
+      <h3>Amaani Ziauddin</h3>
+      <p class="contact-description">
+  For organization, leadership, and collaboration inquiries. Please always CC UIC.redshoes@gmail.com.
+</p>
+      <a href="mailto:aziau@uic.edu?cc=UIC.redshoes@gmail.com">
+  aziau@uic.edu →
+</a>
+    </article>
+
+    <article class="contact-card contact-card-cream">
+      <p class="contact-role">FACULTY ADVISOR</p>
+      <h3>Dr. Abby Kindelsperger</h3>
+      <p class="contact-description">Faculty advisor for Red Shoes Review.</p>
+      <a href="mailto:akinde4@uic.edu">
+        akinde4@uic.edu →
+      </a>
+    </article>
+
+  </div>
+
+</section>
+
+    
 
   <footer>
     <span>© 2026 RED SHOES REVIEW</span>
