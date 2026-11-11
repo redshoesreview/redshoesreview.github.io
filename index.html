@@ -394,9 +394,38 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
 .submit-stamp {
   pointer-events: none;
 }
-  </style>
+ 
+  /* Feature card photographs */
+.feature-photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(90,46,37,.16);
+}
+
+/* Two photographs in the Follow RSR card */
+.feature-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.feature-photo-pair img {
+  width: 100%;
+  height: 250px;
+  min-width: 0;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+
+</style>
 </head>
 <body>
+
   <header class="site-header">
     <a class="logo" href="#home" aria-label="Red Shoes Review home">
       <span class="logo-script">Red Shoes</span>
@@ -595,7 +624,7 @@ footer { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 7
 
   <article class="issue-card issue-red">
     <div class="issue-number">HISTORICAL ARCHIVE</div>
-    <h3>Fall<br>1984</h3>
+    <h3>Fall 1984</h3>
     <p>Preserved in Print</p>
     <a href="https://drive.google.com/file/d/1l_7Qtk6-scWSlAb09eIxO_bOx3RqDXeX/view?usp=sharing" target="_blank">READ ISSUE</a>
   </article>
